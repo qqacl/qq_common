@@ -7,6 +7,48 @@ import java.util.Date;
 import org.junit.Test;
 
 public class DateUtilTest {
+	
+	@Test
+	public void testGetAge() throws ParseException {
+		String src = "2019-09-08";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		int i = DateUtil.getAge(sdf.parse(src));
+		System.err.println(sdf.format(i));
+		
+	}
+	
+	@Test
+	public void testGetDateByMonthInit() throws ParseException {
+		String src = "2019-09-19 19:29:39";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		
+		Date date = DateUtil.getDateByMonthInit(sdf.parse(src));
+		System.out.println(sdf.format(date));
+	}
+	
+	@Test
+	public void testGetDateByMonthLast() throws ParseException {
+		String src = "2019-09-19 19:29:39";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		Date date = DateUtil.getDateByMonthLast(sdf.parse(src));
+		System.out.println(sdf.format(date));
+	}
+	
+	@Test
+	public void testGetDaysByFuture() throws ParseException {
+		String src = "2019-09-08";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		int i = DateUtil.getAge(sdf.parse(src));
+		System.err.println(sdf.format(i));
+	}
+	
+	@Test
+	public void testGetDaysByDeparted() throws ParseException {
+		String src = "2019-09-08";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		int i = DateUtil.getDaysByDeparted(null);
+		System.err.println(i);
+	}
 
 	@Test
 	public void testGetDateByInitMonth() throws ParseException {
